@@ -1,0 +1,357 @@
+/************* navbar styling starts ************/
+.navbar {
+    background-color: var(--green-primary);
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.logo,
+.nav-links,
+.nav-btn {
+    position: relative;
+    transform: skew(-25deg);
+    height: 90px;
+}
+
+.logo img,
+.nav-down-links ul,
+.nav-up-links ul,
+.nav-down-links ul li a h6,
+.account-icon-holder {
+    transform: skew(25deg);
+}
+
+.logo, .nav-btn {
+    flex: 1;
+    max-width: 200px;
+    min-width: 200px;
+}
+
+.logo {
+    margin-left: -25px;
+    background-color: var(--white-primary);
+    padding-left: 50px;
+}
+
+.logo img {
+    height: 90px;
+}
+
+.nav-links {
+    flex: 3;
+    border-left: 5px solid var(--green-primary);
+    border-right: 5px solid var(--white-primary);
+}
+
+.nav-up-links,
+.nav-down-links {
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.nav-up-links {
+    height: 40px;
+    justify-content: space-between;
+}
+
+.nav-up-links ul {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-up-links ul li a {
+    color: var(--white-primary);
+    display: flex;
+}
+
+.nav-up-links ul li a i {
+    font-size: 20px;
+}
+
+.nav-down-links {
+    height: 50px;
+    background-color: var(--white-primary);
+}
+
+.nav-down-links ul {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.nav-down-links ul button {
+    border-style: none;
+    margin-left: -40px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.nav-down-links ul button i {
+    color: var(--green-primary);
+    font-size: 40px;
+}
+
+.nav-down-links ul li a {
+    display: flex;
+    transform: skew(-25deg);
+    padding: 7px 10px;
+    border-left: 10px solid transparent;
+    color: var(--green-primary);
+    background-color: transparent;
+    transition: 0.4s ease;
+}
+
+.nav-down-links ul li .nav-active,
+.nav-down-links ul li a:hover {
+    color: var(--white-primary);
+    border-left: 10px solid var(--green-primary);
+    background-color: var(--green-secondary);
+}
+
+.nav-btn {
+    margin-right: -25px;
+    padding-right: 50px;
+}
+
+.account-icon-holder {
+    height: 100%;
+    display: flex;
+    float: right;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.account-icon {
+    background-color: var(--white-primary);
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.account-icon i {
+    font-size: 20px;
+    color: var(--green-primary);
+}
+
+.mobile-nav {
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    background-color: var(--white-primary);
+    width: 100%;
+    height: 50px;
+    display: none;
+    transition: bottom 0.3s ease-in-out;
+}
+
+.mobile-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px;
+    height: 100%;
+}
+
+.mobile-nav ul button {
+    background-color: var(--green-primary);
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.mobile-nav ul button i {
+    color: var(--white-primary);
+    font-size: 20px;
+}
+
+.mobile-nav ul li a i {
+    color: var(--green-primary);
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .logo, .nav-btn {
+        flex: 1;
+        max-width: 500px;
+        min-width: 150px;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 999;
+        background-color: var(--transparetn-background);
+        transform: skew(0deg);
+        border-style: none;
+        display: none;
+    }
+
+    .nav-up-links {
+        display: none;
+    }
+
+    .nav-down-links {
+        background-color: var(--white-primary);
+        width: 250px;
+        position: absolute;
+        height: 100vh;
+        padding: 20px 60px;
+        right: -100%;
+        animation: moveLeft 0.6s ease-in-out forwards;
+    }
+
+    @keyframes moveLeft {
+        0% {
+            right: -100%;
+        }
+
+        100% {
+            right: 0;
+        }
+    }
+
+    .nav-down-links ul {
+        display: block;
+        gap: 0;
+        transform: skew(0deg);
+    }
+
+    .nav-down-links ul button {
+        display: flex;
+    }
+
+    .nav-down-links ul li {
+        margin-bottom: 5px;
+    }
+
+    .mobile-nav {
+        display: block;
+        z-index: 99;
+    }
+}
+/************* navbar styling ends ************/
+
+/**************** footer  starts ****************/
+footer {
+    background-color: var(--green-primary);
+    padding: 50px;
+    margin-top: 90px;
+}
+
+.footer-content {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.footer-box {
+    flex: 1;
+    color: var(--white-primary);
+    min-width: 300px;
+}
+
+.footer-box h3 {
+    font-family: 'Kalam', cursive;
+}
+
+.footer-box p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+#logo {
+    height: 100px;
+    float: left;
+    margin-right: 20px;
+}
+
+
+.footer-box ul li {
+    margin-bottom: 5px;
+}
+
+.footer-box ul li,
+.footer-box ul li a {
+    color: var(--white-primary);
+    font-size: 16px;
+}
+
+.footer-link {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-link hr {
+    margin: 0px 15px;
+}
+
+.footer-link li a {
+    color: var(--white-primary);
+}
+
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    color: var(--white-primary);
+    align-items: center;
+}
+
+.copyright h6 {
+    font-size: 14px;
+}
+
+.copyright a {
+    color: var(--white-primary);
+}
+
+.footer-box ul li a:hover,
+.footer-link li a:hover,
+.copyright a:hover {
+    text-decoration: underline;
+}
+
+.copyright ul {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.copyright ul li a i {
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 1000px) {
+    footer {
+        padding: 50px 20px;
+    }
+
+    .footer-content {
+        gap: 30px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .copyright {
+        display: block;
+        text-align: center;
+    }
+
+    .copyright ul {
+        margin-top: 20px;
+    }
+}
+
+/**************** footer ends ****************/
